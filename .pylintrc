@@ -1,0 +1,14 @@
+[MASTER]
+ignore=.venv,__pycache__
+
+[MESSAGES CONTROL]
+disable=C0114,C0115,C0116,W0611,R0903
+
+[FORMAT]
+max-line-length=100
+
+[BASIC]
+good-names=x,y,X,df,i,j,k,e,f
+
+[SIMILARITIES]
+min-similarity-lines=10
