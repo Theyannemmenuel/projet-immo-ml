@@ -1,0 +1,164 @@
+{
+  "name": "immo-ml-sdn",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-09c19056a053",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "router1": {
+      "index": "0",
+      "shortname": "router1",
+      "longname": "clab-immo-ml-sdn-router1",
+      "fqdn": "router1.immo-ml-sdn.io",
+      "group": "",
+      "labdir": "/home/devops/projet-immo-ml/containerlab/clab-immo-ml-sdn/router1",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-09c19056a053",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/devops/projet-immo-ml/containerlab/clab-immo-ml-sdn/router1",
+        "clab-node-longname": "clab-immo-ml-sdn-router1",
+        "clab-node-name": "router1",
+        "clab-node-type": "",
+        "clab-owner": "devops",
+        "clab-topo-file": "/home/devops/projet-immo-ml/containerlab/topology.yml",
+        "containerlab": "immo-ml-sdn"
+      },
+      "port-bindings": [
+      ]
+    },
+    "router2": {
+      "index": "1",
+      "shortname": "router2",
+      "longname": "clab-immo-ml-sdn-router2",
+      "fqdn": "router2.immo-ml-sdn.io",
+      "group": "",
+      "labdir": "/home/devops/projet-immo-ml/containerlab/clab-immo-ml-sdn/router2",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-09c19056a053",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/devops/projet-immo-ml/containerlab/clab-immo-ml-sdn/router2",
+        "clab-node-longname": "clab-immo-ml-sdn-router2",
+        "clab-node-name": "router2",
+        "clab-node-type": "",
+        "clab-owner": "devops",
+        "clab-topo-file": "/home/devops/projet-immo-ml/containerlab/topology.yml",
+        "containerlab": "immo-ml-sdn"
+      },
+      "port-bindings": [
+      ]
+    },
+    "router3": {
+      "index": "2",
+      "shortname": "router3",
+      "longname": "clab-immo-ml-sdn-router3",
+      "fqdn": "router3.immo-ml-sdn.io",
+      "group": "",
+      "labdir": "/home/devops/projet-immo-ml/containerlab/clab-immo-ml-sdn/router3",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-09c19056a053",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/devops/projet-immo-ml/containerlab/clab-immo-ml-sdn/router3",
+        "clab-node-longname": "clab-immo-ml-sdn-router3",
+        "clab-node-name": "router3",
+        "clab-node-type": "",
+        "clab-owner": "devops",
+        "clab-topo-file": "/home/devops/projet-immo-ml/containerlab/topology.yml",
+        "containerlab": "immo-ml-sdn"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "router1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:14:c7:b1",
+          "peer": "z"
+        },
+        "z": {
+          "node": "router2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:36:97:df",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "router2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:fd:fe:97",
+          "peer": "z"
+        },
+        "z": {
+          "node": "router3",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:ba:fe:9f",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "router1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:24:d1:86",
+          "peer": "z"
+        },
+        "z": {
+          "node": "router3",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:f5:60:bf",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}
