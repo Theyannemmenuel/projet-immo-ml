@@ -1,0 +1,5 @@
+===== RÉSULTATS DU MODÈLE =====
+R²   : 0.8185
+RMSE : 0.4877
+MAE  : 0.3275
+MSE  : 0.2378
